@@ -44,3 +44,11 @@ ALTER TABLE produtos
     -- chave primária (id) de OUTRA TABELA (fabricantes)
     FOREIGN KEY (fabricante_id) REFERENCES fabricantes(id);
 ```
+
+### Exemplos de alterações estruturais em tabelas
+
+#### Adicionar colunas 
+``` sql
+ALTER TABLE produtos ADD qtde INT NULL AFTER preco;
+```
+
