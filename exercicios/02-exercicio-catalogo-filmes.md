@@ -35,11 +35,11 @@ CREATE TABLE filmes(
 ``` sql
 CREATE TABLE detalhes(
 	id_detalhes INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    duracao INT NOT NULL,
-    sinopse TEXT(800) NOT NULL,
-    bilheteria DECIMAL(14,2) NULL,
-    orcamento DECIMAL(12,2) NULL,
-    filmes_ID INT NOT NULL 
+        duracao INT NOT NULL,
+        sinopse TEXT(800) NOT NULL,
+        bilheteria DECIMAL(14,2) NULL,
+        orcamento DECIMAL(12,2) NULL,
+        filmes_ID INT NOT NULL 
 );
 ```
 
