@@ -23,3 +23,11 @@ INSERT INTO fabricantes (nome) VALUES('LG'), ('Samsung'), ('Brastemp');
 ``` sql
 SELECT * FROM fabricantes;
 ```
+
+---
+
+## INSERT (Produtos) 
+``` sql
+INSERT INTO produtos(nome, descricao, preco, qtde, fabricante_id) 
+VALUES ('Ultrabook', 'Equipamento de última geração...', 3999.45, 7, 2)
+```
