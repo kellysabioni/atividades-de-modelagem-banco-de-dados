@@ -15,7 +15,7 @@ CREATE DATABASE catalogo_filmes CHARACTER SET utf8mb4;
 ### Criando tabela generos
 ``` sql
 CREATE TABLE generos(
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL 
 );
 ```
@@ -23,7 +23,7 @@ CREATE TABLE generos(
 ### Criando tabela filmes
 ``` sql
 CREATE TABLE filmes(
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR (60) NOT NULL,
     lancamento DATE NOT NULL,
     genero_id INT NOT NULL 
@@ -33,7 +33,7 @@ CREATE TABLE filmes(
 ### Criando tabela detalhes
 ``` sql
 CREATE TABLE detalhes(
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     duracao INT NOT NULL,
     sinopse TEXT(800) NOT NULL,
     bilheteria DECIMAL(14,2) NULL,
@@ -53,6 +53,6 @@ ALTER TABLE filmes
 #### Detalhes > Filmes
 ``` sql
 ALTER TABLE detalhes
-	ADD CONSTRAINT fk_detalhes_filmes
+    ADD CONSTRAINT fk_detalhes_filmes
     FOREIGN KEY (filme_id) REFERENCES filmes(id);
 ```
