@@ -55,7 +55,6 @@ Insira mais dois fabricantes em seu banco de dados vendas:
 
 ``` sql
 INSERT INTO fabricantes (nome) VALUES('Positivo'), ('Microsoft');
-
 ```
 
 Adicione mais dois produtos na tabela produtos conforme indicado:
@@ -87,12 +86,18 @@ SELECT nome, descricao FROM produtos WHERE fabricante_id = 3 ;
 
 ### Operadores Lógicos: E, OU e NÃO
 
+---
+---
+
 #### E (AND)
 
 ``` sql
 -- Exibir nome e preço dos produtos que custam entre 2000 e 6000
 SELECT nome, preco FROM produtos WHERE preco >=2000 AND preco <=6000;
 ```
+
+---
+---
 
 #### OU (OR)
 
@@ -104,8 +109,9 @@ SELECT nome, descricao FROM produtos WHERE fabricante_id = 3 OR fabricante_id = 
 SELECT nome, descricao FROM produtos WHERE fabricante_id IN(3,5);
 ```
 
+---
+---
 #### NÃO (NOT)
-
 ``` sql
 -- Nome, descrição e preço de todos os produtos EXCETO da Positivo
 SELECT nome, descricao, preco FROM produtos WHERE NOT fabricante_id = 8;
@@ -113,3 +119,7 @@ SELECT nome, descricao, preco FROM produtos WHERE NOT fabricante_id = 8;
 -- Versão usando o operador relacional de "diferença/diferente"
 SELECT nome, descricao, preco FROM produtos WHERE fabricante_id != 8;
 ```
+
+---
+---
+
