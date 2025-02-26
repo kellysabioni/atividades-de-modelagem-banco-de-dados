@@ -121,7 +121,6 @@ SELECT nome, descricao, preco FROM produtos WHERE fabricante_id != 8;
 ```
 
 ---
----
 
 ## UPDATE (Fabricantes)
 
@@ -134,4 +133,23 @@ UPDATE fabricantes SET nome = 'Asus do Brasil' WHERE id = 1;
 
 -- Mini-exercício: Alterar a quantidade para 10 dos produtos que custam abaixo de 2000,00 exceto da Microsoft
 UPDATE produtos SET qtde = 10 WHERE preco < 2000 AND fabricante_id != 8;
+```
+
+---
+
+## DELETE (Fabricantes e Produtos)
+
+**☠️ PERIGO! 🚨**
+
+** SEMPRE USE ** a clausula 'WHERE' em seu comando 'DELETE' especificando uma ou mais condições para a atualização
+
+``` sql
+-- Apagando fabricante ASUS
+DELETE FROM fabricantes WHERE id = 1;
+
+-- Apagando fabricante LG
+DELETE FROM fabricantes WHERE id = 4;
+
+-- Apagando produto iPhone
+DELETE FROM produtos WHERE id=4;
 ```
