@@ -45,3 +45,29 @@ INSERT INTO detalhes (filme_id, duracao, bilheteria, orcamento, sinopse) values
 ( 5 , 149 , 2048000000 , 400000000 , 'Os Vingadores e seus aliados devem estar dispostos a sacrificar tudo para tentar derrotar o poderoso Thanos antes que seu ataque de devastação e ruína acabe com o universo.'),
 ( 7 , 124 , null       , 150000000 , 'Uma nova atração no parque temático Jurassic World, um dinossauro geneticamente modificado, escapa do confinamento e inicia uma caçada sangrenta pela ilha.')
 ```
+### Manipulando os dados 
+
+
+### EXERCICIO LIVRE USANDO JOIN
+``` sql
+-- Mostrando FILME e GENERO
+SELECT 
+    filmes.titulo AS Filme,
+    generos.nome AS Genero
+FROM filmes INNER JOIN generos
+ON filmes.genero_id = generos.id;
+
+---
+
+-- Mostrar Filme e Detalhe do Filme 
+SELECT
+    filmes.titulo AS Filme,
+    detalhes.sinopse AS Sinopse
+FROM detalhes INNER JOIN filmes
+ON detalhes.filme_id = filmes.id;
+---
+
+-- Mostrar Filme, Genero e Detalhe do Filme 
+
+---
+```
