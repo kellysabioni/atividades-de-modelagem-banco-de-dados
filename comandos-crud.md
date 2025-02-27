@@ -153,3 +153,15 @@ DELETE FROM fabricantes WHERE id = 4;
 -- Apagando produto iPhone
 DELETE FROM produtos WHERE id=4;
 ```
+
+---
+### Classificação/Ordenação
+``` sql
+-- DESC: ordena em ordem decrescente
+-- ASC: ordena em ordem crescente (padrão)
+SELECT nome, preco FROM produtos ORDER BY nome;
+SELECT nome, preco FROM produtos ORDER BY preco;
+SELECT nome, preco FROM produtos ORDER BY preco DESC;
+
+SELECT nome, preco, QTDE FROM produtos WHERE fabricante_id = 5 ORDER BY qtde;
+```
