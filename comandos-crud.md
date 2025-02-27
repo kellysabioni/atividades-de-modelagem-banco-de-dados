@@ -196,6 +196,11 @@ SELECT COUNT(DISTINCT fabricante_id) AS "Qtde de Fabricantes com produtos" FROM 
 
 -- Operações matemáticas 
 SELECT nome, preco, qtde, (preco * qtde) AS Total FROM produtos;
+
+-- Segmentação/Agrupamento de resultados
+SELECT fabricante_id as Fabricante, SUM(preco) as Total FROM produtos
+GROUP BY fabricante_id ;
+
 ```
 
 ## Consulta (Queries) em duas ou mais tabelas relacionadas (JUNÇÃO/JOIN)
