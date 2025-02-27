@@ -165,3 +165,21 @@ SELECT nome, preco FROM produtos ORDER BY preco DESC;
 
 SELECT nome, preco, QTDE FROM produtos WHERE fabricante_id = 5 ORDER BY qtde;
 ```
+---
+
+### OPERAÇÕES E FUNÇÕES DE AGREGAÇÃO
+``` sql
+-- Função de SOMA (SUM)
+SELECT SUM(preco) FROM produtos;
+
+-- alias/apelido para coluna
+SELECT SUM(preco) AS Total FROM produtos;
+SELECT SUM(preco) AS "Total dos Preços dos Produtos" FROM produtos; 
+SELECT nome AS Produto, preco as Preço FROM produtos;
+SELECT nome Produto, preco Preço FROM produtos; -- omitindo o AS
+
+-- Funções de formatação/configuração: FORMAT e REPLACE
+SELECT FORMAT(SUM(preco), 2) AS Total FROM produtos;
+SELECT REPLACE(FORMAT(SUM(preco), 2), ",", ".") AS Total FROM produtos;
+
+```
