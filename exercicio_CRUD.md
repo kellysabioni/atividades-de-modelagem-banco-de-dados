@@ -56,9 +56,8 @@ SELECT
     generos.nome AS Genero
 FROM filmes INNER JOIN generos
 ON filmes.genero_id = generos.id;
-
 ---
-
+---
 -- Mostrar Filme e Detalhe do Filme 
 SELECT
     filmes.titulo AS Filme,
@@ -66,8 +65,14 @@ SELECT
 FROM detalhes INNER JOIN filmes
 ON detalhes.filme_id = filmes.id;
 ---
-
+---
 -- Mostrar Filme, Genero e Detalhe do Filme 
-
+SELECT
+    generos.nome AS Genero,
+    filmes.titulo AS Filme,
+    detalhes.sinopse AS Sinopse
+FROM filmes 
+    INNER JOIN generos ON filmes.genero_id = generos.id 
+    INNER JOIN detalhes ON detalhes.filmes_id = filmes.id ;
 ---
 ```
