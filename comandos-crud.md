@@ -226,5 +226,26 @@ SELECT
 FROM produtos INNER JOIN fabricantes
 ON produtos.fabricante_id = fabricantes.id
 ORDER BY Produto ASC , Preço DESC;   
+```
 
+### Fabricante, Soma dos Preços, Quantidade de Produtos POR Fabricante
+
+``` sql
+SELECT 
+    fabricantes.nome AS Fabricante, 
+    SUM(produtos.preco) AS Total, 
+    COUNT(produtos.fabricante_id) AS "Qtde de Produtos"
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+GROUP BY Fabricante
+ORDER BY Total;
+
+SELECT 
+    fabricantes.nome AS Fabricante, 
+    SUM(produtos.preco) AS Total, 
+    COUNT(produtos.fabricante_id) AS "Qtde de Produtos"
+FROM produtos RIGHT JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+GROUP BY Fabricante
+ORDER BY Total;
 ```
