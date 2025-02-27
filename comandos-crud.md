@@ -197,3 +197,29 @@ SELECT COUNT(DISTINCT fabricante_id) AS "Qtde de Fabricantes com produtos" FROM 
 -- Operações matemáticas 
 SELECT nome, preco, qtde, (preco * qtde) AS Total FROM produtos;
 ```
+
+## Consulta (Queries) em duas ou mais tabelas relacionadas (JUNÇÃO/JOIN)
+
+### Exibir o nome do produto e o nome do fabricante do produto
+``` sql
+-- SELECT nomeDaTabela1.nomeDaColuna, nomeDaTabela2.nomeDaColuna,
+SELECT  fabricantes.nome AS Fabricante, produtos.nome AS Produtos 
+
+-- JOIN permite JUNTAR as tabelas no momento do SELECT
+FROM produtos JOIN fabricantes
+
+-- ON tabela1.chave_estrangeira = tabela2.chave_primaria
+ON produtos.fabricante_id = fabricantes_id;
+```
+
+### Nome do produto, preço do produto, nome do fabricante ordenados pelo nome do produto e pelo preço
+``` sql
+SELECT 
+    produtos.nome AS Produto, 
+    produtos.preco AS Preço, 
+    fabricantes.nome AS Fabricante
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+ORDER BY Produto ASC , Preço DESC;   
+
+```
