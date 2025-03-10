@@ -47,6 +47,16 @@ INSERT INTO detalhes (filme_id, duracao, bilheteria, orcamento, sinopse) values
 ```
 ### Manipulando os dados 
 
+``` sql
+-- Atualiza genero Ação para Ação/Aventura
+UPDATE generos SET nome = 'Ação/Aventura' WHERE id = 1;
+
+-- Exclui filme O Rei Leão 
+DELETE FROM filmes where id;
+```
+
+---
+---
 
 ### EXERCICIO LIVRE USANDO JOIN
 ``` sql
@@ -81,8 +91,10 @@ SELECT
     filmes.titulo AS Filme,
     detalhes.sinopse AS Sinopse
 FROM filmes 
-    RIGHT JOIN generos ON filmes.genero_id = generos.id 
-    INNER JOIN detalhes ON detalhes.filme_id = filmes.id 
+    LEFT JOIN generos ON filmes.genero_id = generos.id 
+    JOIN detalhes ON detalhes.filme_id = filmes.id 
+
 ORDER BY Genero;
 ---
+
 ```
